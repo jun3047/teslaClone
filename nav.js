@@ -10,6 +10,7 @@ const closeMeun = () => {
 
 
 document.getElementById('meun').onclick = e => {
+    e.preventDefault();
     openMeun();
 }
 

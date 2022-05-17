@@ -13,7 +13,7 @@ body{
     display: none;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 1080px) {
     .desktop{
         display: initial;
     }
@@ -22,7 +22,7 @@ body{
 header{
      display: grid;
      grid-template-columns: auto 1fr auto;
-     padding: 15px 40px;
+     padding: 20px 60px;
      position: fixed;
      top: 0;
      z-index: 2;
@@ -43,12 +43,20 @@ header a{
 
 header nav a{
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
  }
 
-header nav.center{
-     text-align: center;
- }
+
+ header nav.center{
+    text-align: center;
+    right: 0px;
+}
+
+header nav a:hover{
+    background-color: rgba(174, 174, 174, 0.345);
+    border-radius: 15px;
+}
+
 
 header nav.right{
      text-align: right;
@@ -56,6 +64,7 @@ header nav.right{
 
 
 aside{
+    transition: right .4s ease;
     z-index: 4;
     position: fixed;
     right: -310px;
@@ -65,17 +74,17 @@ aside{
     padding: 60px 25px;
 }
 
-aside .active{
+aside.active{
     right: 0;
 }
 
 aside .close{
     cursor: pointer;
     border: 0;
-    font-size: 16px;
+    font-size: 38px;
     background-color: transparent;
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 10px;
 }
 
@@ -95,7 +104,7 @@ aside a{
     backdrop-filter: blur(5px);
 }
 
-.backdrop .active{
+.backdrop.active{
     display: block;
 }
 
@@ -131,14 +140,16 @@ section a{
 
 section .btn{
     display: grid;
-    grid-template-rows: auto auto;
+    width: 400px;
+    grid-template-rows: 1fr 1fr;
     row-gap: 20px;
-    margin: 0 40px;
+    margin: 0 auto;
     font-size: 0.8rem;
 }
 
 @media (min-width:760px) {
     section .btn{ 
+        width: auto;
         max-width: 640px;
         grid-template-columns: 1fr 1fr;
         column-gap: 40px;
