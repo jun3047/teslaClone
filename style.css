@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     color: #171a28;
     font-family: 'M PLUS 1p', sans-serif;
@@ -110,12 +114,17 @@ aside a{
 
 
 section{
-     height: 100vh;
-     background-size: cover;
-     background-position: center center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
 }
 
+
 section .content{
+    opacity: 0;
+    position: fixed;
+    transition: opacity .4s ease;
+    top: 0;
     height: 100vh;
     width: 100%;
     padding-top: 15vh;
@@ -123,6 +132,10 @@ section .content{
     text-align: center;
     display: grid;
     grid-template-rows: min-content auto min-content;
+}
+
+section.active .content{
+    opacity: 1;
 }
 
 section h1{
